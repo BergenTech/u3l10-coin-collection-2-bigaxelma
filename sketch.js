@@ -21,8 +21,8 @@ function initializeGame() {
   newCoin();
   
   // Initialize obstacle position
-  obstacleX = 0;
-  obstacleY = random(20, height-20);
+  obstacleX = random(20,width-20);
+  obstacleY = 0;
 }
 
 function draw() {
@@ -90,12 +90,12 @@ function movePlayer() {
 function moveObstacle() {
   // TODO: Move obstacle from left to right
   // HINT: Increase obstacleX by obstacleSpeed
-  obstacleX+=obstacleSpeed;
+  obstacleY+=obstacleSpeed;
   // TODO: Reset obstacle when it goes off screen
   // HINT: Check if obstacleX > width
-  if (obstacleX>=width){
-    obstacleX=0;
-    obstacleY = random(20, height-20);
+  if (obstacleY>=height){
+    obstacleY=0;
+    obstacleX = random(20, height-20);
   }
   // Reset to left side and new random Y position
   
@@ -136,8 +136,8 @@ function displayStats() {
   textSize(16);
   text("Score: " + score, 10, 20);
   // TODO: Add display for hits and speed
-  text("Hits:" + hits, 110, 20 )
-  text("Speed:" + obstacleSpeed, 210, 20)
+  text("Hits: " + hits, 110, 20 )
+  text("Speed :" + obstacleSpeed, 210, 20)
 }
 
 function displayGameOver() {
@@ -147,8 +147,10 @@ function displayGameOver() {
   //   - "Game Over" message
   //   - Final score
   //   - "Press R to Restart"
-  fill(0)
   textAlign(CENTER,CENTER)
+  text("GAME OVER", 200, 200)
+  text('FINAL SCORE: ' + score,200,225)
+  text('press r to restart',200,250) 
 }
 
 function newCoin() {
