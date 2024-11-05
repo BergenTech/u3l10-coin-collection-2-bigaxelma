@@ -165,8 +165,8 @@ function resetGame() {
   // Set gameOver to false
   // Call initializeGame()
   gameOver=false
-  score==0;
-  hits==0;
+  score=0;
+  hits=0;
   obstacleSpeed==5;
   initializeGame
 }
@@ -175,7 +175,7 @@ function keyPressed() {
   // TODO: Check for 'R' key to restart game
   // HINT: Use key === 'r' || key === 'R'
   // Only works when game is over
-  if (key==r & gameOver==true){
+  if (key=='r' & gameOver==true){
     resetGame()
   }
 }
